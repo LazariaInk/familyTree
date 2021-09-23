@@ -1,13 +1,12 @@
 package md.lazaria.familyTree.service;
-
 import md.lazaria.familyTree.model.Branch;
 import md.lazaria.familyTree.repository.BranchRepository;
 import md.lazaria.familyTree.exception.BranchNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.criteria.CriteriaBuilder;
+import javax.transaction.Transactional;
 import java.util.List;
+
 
 @Service
 public class BranchService {
@@ -25,7 +24,7 @@ public class BranchService {
         return branchRepository.findAll();
     }
 
-    public Branch updateEmployee(Branch branch) {
+    public Branch updateBranch(Branch branch) {
         return branchRepository.save(branch);
     }
 
